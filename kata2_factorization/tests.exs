@@ -13,4 +13,4 @@ tests = [
     {2643679037 , [34183, 77339]}
 ]
 
-Enum.each(tests, fn x -> IO.puts Numbers.factors(elem(x,0)) == elem(x,1) end)
+Enum.each(tests, fn x -> IO.puts Factors.factors(elem(x,0)) == elem(x,1) end)

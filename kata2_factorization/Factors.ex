@@ -1,4 +1,4 @@
-defmodule Numbers do
+defmodule Factors do
     def factors(n) do
         if n < 2 do
             []

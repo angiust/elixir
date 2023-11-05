@@ -1,8 +1,8 @@
-test: tests.exs Elixir.Numbers.beam
+test: tests.exs Elixir.Factors.beam
 	elixir $<
 
-performance: performance.exs Elixir.Numbers.beam
+performance: performance.exs Elixir.Factors.beam
 	time elixir $<
 
-Elixir.Numbers.beam: factors.ex
+Elixir.Factors.beam: Factors.ex
 	elixirc $<
