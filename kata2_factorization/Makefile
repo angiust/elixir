@@ -1,7 +1,8 @@
-all: test
-
-test: f_tests.exs factorize
+test: tests.exs Elixir.Numbers.beam
 	elixir $<
 
-factorize: factorize.ex
+performance: performance.exs Elixir.Numbers.beam
+	time elixir $<
+
+Elixir.Numbers.beam: factors.ex
 	elixirc $<
