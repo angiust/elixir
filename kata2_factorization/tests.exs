@@ -13,19 +13,4 @@ tests = [
     {2643679037 , [34183, 77339]}
 ]
 
-tests_r = [
-    0,
-    1,
-    -1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-]
-
-# Enum.each(tests_r, fn x -> IO.puts Numbers.int_sqr(x) end)
 Enum.each(tests, fn x -> IO.puts Numbers.factors(elem(x,0)) == elem(x,1) end)
