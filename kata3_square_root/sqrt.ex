@@ -1,11 +1,15 @@
 defmodule Numbers do
   def sqrt(n) do
-    sqrt(n, 1)
+    c=ceiling_sqrt(n,1)
+    cond do
+      (c*c - n) > (n-(c-1)*(c-1)) -> c-1
+      true -> c
+    end
   end
-  defp sqrt(n,try) do
+  defp ceiling_sqrt(n,try) do
     cond do
       try*try > n -> try
-      true -> sqrt(n, try+1)
+      true -> ceiling_sqrt(n, try+1)
     end
   end
 end
