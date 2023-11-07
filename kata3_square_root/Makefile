@@ -1,7 +1,5 @@
-all: test
-
-test: tests.exs sqrt
+test: tests.exs Elixir.Numbers.beam
 	elixir $<
 
-sqrt: sqrt.ex
+Elixir.Numbers.beam: sqrt.ex
 	elixirc $<
