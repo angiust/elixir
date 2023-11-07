@@ -13,6 +13,13 @@ defmodule Numbers do
     end
   end
   def sqrt(n,precision) do
-    sqrt(n*:math.pow(10, 2*precision))/:math.pow(10, precision)
+    sqrt(n*pow(10, 2*precision))/pow(10, precision)
+  end
+  defp pow(a, n) do
+    cond do
+      n == 0 -> 1
+      n == 1 -> a
+      true -> a*pow(a, n-1)
+    end
   end
 end

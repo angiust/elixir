@@ -14,5 +14,5 @@ tests = [
     {3487289, 1867} 
 ]
 
-Enum.each(tests, fn x -> IO.puts Numbers.sqrt(elem(x,0),2) end)
+Enum.each(tests, fn x -> IO.puts Numbers.sqrt(elem(x,0),5) end)
 Enum.each(tests, fn x -> IO.puts Numbers.sqrt(elem(x,0)) == elem(x,1) end)
