@@ -1,7 +1,7 @@
 all: test
 
-test: f_tests.exs factorize
+test: tests.exs sqrt
 	elixir $<
 
-factorize: factorize.ex
+sqrt: sqrt.ex
 	elixirc $<

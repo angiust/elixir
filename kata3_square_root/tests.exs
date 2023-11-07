@@ -1,13 +1,18 @@
 tests = [
-  {{}, 0, false},
-  {{1}, 0, false},
-  {{1}, 1, true},
-  {{1,2}, 1, true},
-  {{1,2}, 2, true},
-  {{1,3}, 2, false},
-  {{-1,5,13}, 4, false},
-  {{-1,5,13}, 13, true},
-  {{5,13,21,34}, 21, true},
+    {0, 0},
+    {1, 1},
+    {2, 1},
+    {3, 2},
+    {4, 2},
+    {5, 2},
+    {6, 2},
+    {7, 3},
+    {8, 3},
+    {9, 3},
+    {101, 10},
+    {10001, 100},
+    {3487289, 1867} 
 ]
 
-Enum.each(tests, fn x -> IO.puts Binary.search(elem(x,0), elem(x,1)) == elem(x,2) end)
+Enum.each(tests, fn x -> IO.puts Numbers.sqrt(elem(x,0)) end)
+Enum.each(tests, fn x -> IO.puts Numbers.sqrt(elem(x,0)) == elem(x,1) end)
