@@ -1,25 +1,16 @@
 defmodule Numbers do
-  def sqrt(n) do
-    c=ceil_sqrt(n,1)
+  def sqrt(n, tollerance \\ 0.01) do
+    sqrt(n, 0, n, tollerance)
+  end
+
+  defp sqrt(n, i, f, tollerance) do
+    try = (i+f)/2
+    c = try*try
     cond do
-      (c*c - n) > (n-(c-1)*(c-1)) -> c-1
-      true -> c
+      (c-n) <= tollerance and n-c <= tollerance -> try
+      c > n -> sqrt(n, i, try, tollerance)
+      c < n -> sqrt(n, try,f , tollerance)
     end
   end
-  defp ceil_sqrt(n,try) do
-    cond do
-      try*try > n -> try
-      true -> ceil_sqrt(n, try+1)
-    end
-  end
-  def sqrt(n,precision) do
-    sqrt(n*pow(10, 2*precision))/pow(10, precision)
-  end
-  defp pow(a, n) do
-    cond do
-      n == 0 -> 1
-      n == 1 -> a
-      true -> a*pow(a, n-1)
-    end
-  end
+
 end
